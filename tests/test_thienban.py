@@ -4,9 +4,9 @@ import unittest
 
 import pytest
 
-from lasotuvi.App import lapDiaBan
-from lasotuvi.DiaBan import diaBan
-from lasotuvi.ThienBan import lapThienBan
+from ansaotuvi.App import lapDiaBan
+from ansaotuvi.DiaBan import diaBan
+from ansaotuvi.ThienBan import lapThienBan
 
 
 @pytest.mark.thienban

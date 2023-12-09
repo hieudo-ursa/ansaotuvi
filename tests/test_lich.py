@@ -6,8 +6,10 @@ from datetime import date
 import pytest
 from ephem import Date, Observer
 
-from lasotuvi.Lich_EPHEM import s2l, find_solar_terms_between, when_is_sun_at_degrees_longitude, find_new_moon_between
-from lasotuvi.Lich_HND import S2L as S2L_bak
+from ansaotuvi.Lich_EPHEM import (find_new_moon_between,
+                                  find_solar_terms_between, s2l,
+                                  when_is_sun_at_degrees_longitude)
+from ansaotuvi.Lich_HND import S2L as S2L_bak
 
 calendar_table = {
     date(1991, 10, 24): (date(1991, 9, 17), False),

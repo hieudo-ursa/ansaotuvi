@@ -2,7 +2,7 @@ import unittest
 
 import pytest
 
-from lasotuvi.DiaBan import diaBan
+from ansaotuvi.DiaBan import diaBan
 
 
 @pytest.mark.diaban
