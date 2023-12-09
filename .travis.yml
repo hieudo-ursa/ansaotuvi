@@ -1,11 +1,7 @@
-language: python
-python:
-  - "3.5"
-  - "3.6"
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# command to run tests
-script: python -m pytest
-branches:
-  only:
-    - master
+deploy:
+  provider: pypi
+  username: "__token__"
+  password: "pypi-AgEIcHlwaS5vcmcCJDVlYTA5MTU3LTAxNWQtNGQzNS1iMTQ5LTMxM2U0OTA4MzRiMQACKlszLCI5NjFlZmYxZC00ODc1LTQ0YWMtODcwZC0wOTc2OGRiMjcwOWUiXQAABiDvQz1Rn_vCOZXDirvw-xnvINAr9qSxtmG3Cz3yYNWQtQ"
+  on:
+    branch: 
+      master

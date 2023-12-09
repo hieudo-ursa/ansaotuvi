@@ -1,13 +1,13 @@
 from setuptools import setup
 
-setup(name='lasotuvi',
-      version='0.1.2',
+setup(name='ansaotuvi',
+      version='0.1.1',
       description='Chương trình an sao tử vi mã nguồn mở',
-      url='https://github.com/doanguyen/lasotuvi',
-      author='doanguyen',
-      author_email='dungnv2410@gmail.com',
+      url='https://github.com/hieudo-ursa/ansaotuvi',
+      author='hieu.do',
+      author_email='hieu.do@ursa.vn',
       license='MIT',
-      packages=['lasotuvi'],
+      packages=['ansaotuvi'],
       setup_requires=['pytest-runner'],
       tests_require=['pytest'],
       install_requires=[

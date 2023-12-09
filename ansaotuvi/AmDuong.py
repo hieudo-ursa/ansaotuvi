@@ -3,8 +3,7 @@
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
 
-from lasotuvi.Lich_HND import S2L, L2S, jdFromDate
-
+from ansaotuvi.Lich_HND import L2S, S2L, jdFromDate
 
 thienCan = [
     {
@@ -429,13 +428,13 @@ def dichCung(cungBanDau, *args):
     cungSauKhiDich = int(cungBanDau)
     for soCungDich in args:
         cungSauKhiDich += int(soCungDich)
-    if cungSauKhiDich % 12 is 0:
+    if cungSauKhiDich % 12 == 0:
         return 12
     return cungSauKhiDich % 12
 
 
 def khoangCachCung(cung1, cung2, chieu=1):
-    if chieu is 1:  # Con trai, chiều dương
+    if chieu == 1:  # Con trai, chiều dương
         return (cung1 - cung2 + 12) % 12
     else:
         return (cung2 - cung1 + 12) % 12
@@ -444,7 +443,7 @@ def khoangCachCung(cung1, cung2, chieu=1):
 def timCuc(viTriCungMenhTrenDiaBan, canNamSinh):
     canThangGieng = (canNamSinh * 2 + 1) % 10
     canThangMenh = ((viTriCungMenhTrenDiaBan - 3) % 12 + canThangGieng) % 10
-    if canThangMenh is 0:
+    if canThangMenh == 0:
         canThangMenh = 10
     return nguHanhNapAm(viTriCungMenhTrenDiaBan, canThangMenh)
 
@@ -470,7 +469,7 @@ def timTuVi(cuc, ngaySinhAmLich):
         cuc += cucBanDau
         cungDan += 1  # Dịch vị trí cung Dần
     saiLech = cuc - ngaySinhAmLich
-    if saiLech % 2 is 1:
+    if saiLech % 2 == 1:
         saiLech = -saiLech  # Nếu sai lệch là chẵn thì tiến, lẻ thì lùi
     return dichCung(cungDan, saiLech)
 
