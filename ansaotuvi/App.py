@@ -45,7 +45,7 @@ def lapDiaBan(diaBan, nn, tt, nnnn, gioSinh, gioiTinh, duongLich, timeZone):
     canThang, canNam, chiNam = \
         ngayThangNamCanChi(nn, tt, nnnn, False, timeZone)
 
-    diaBan = diaBan(tt, gioSinh)
+    diaBan = diaBan(tt, gioSinh, thienCan[canNam])
 
     amDuongNamSinh = thienCan[canNam]["amDuong"]
     amDuongChiNamSinh = diaChi[chiNam]["amDuong"]

@@ -3,13 +3,13 @@
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
 
-from ansaotuvi.AmDuong import diaChi, dichCung, khoangCachCung
+from ansaotuvi.AmDuong import diaChi, dichCung, khoangCachCung, thienCan
 
 
 class cungDiaBan(object):
     """docstring for cungDiaBan"""
 
-    def __init__(self, cungID):
+    def __init__(self, cungID, canDiaBan):
         # super(cungDiaBan, self).__init__()
         hanhCung = [
             None,
@@ -30,7 +30,7 @@ class cungDiaBan(object):
         self.hanhCung = hanhCung[cungID]
         self.cungSao = []
         self.cungAmDuong = -1 if (self.cungSo % 2 == 0) else 1
-        self.cungTen = diaChi[self.cungSo]["tenChi"]
+        self.cungTen = canDiaBan["chuCaiDau"] + ". " + diaChi[self.cungSo]["tenChi"]
         self.cungThan = False
 
     def themSao(self, sao):
@@ -61,13 +61,35 @@ class cungDiaBan(object):
 
 
 class diaBan(object):
-    def __init__(self, thangSinhAmLich, gioSinhAmLich):
+    def __init__(self, thangSinhAmLich, gioSinhAmLich, thienCanNam):
         super(diaBan, self).__init__()
         self.thangSinhAmLich = thangSinhAmLich
         self.gioSinhAmLich = gioSinhAmLich
-        self.thapNhiCung = [cungDiaBan(i) for i in range(13)]
+        listOfCanDiaBan = self.canDiaBan(thienCanNam).extend(thienCan[0])
+        self.thapNhiCung = [cungDiaBan(i, listOfCanDiaBan[i]) for i in range(13)]
         self.nhapCungChu()
         self.nhapCungThan()
+    
+    def canDiaBan(self, thienCanNam):
+        tmpThienCan = thienCan[1:]
+        if thienCanNam["chuCaiDau"] == "G" and thienCanNam["chuCaiDau"] == "K":
+            firstThienCan = tmpThienCan[0:1]
+            secondThienCan = tmpThienCan[2:]
+            return secondThienCan.extend(firstThienCan)
+        elif thienCanNam["chuCaiDau"] == "A" and thienCanNam["chuCaiDau"] == "C":
+            firstThienCan = tmpThienCan[0:3]
+            secondThienCan = tmpThienCan[4:]
+            return secondThienCan.extend(firstThienCan)
+        elif thienCanNam["chuCaiDau"] == "B" and thienCanNam["chuCaiDau"] == "T":
+            firstThienCan = tmpThienCan[0:5]
+            secondThienCan = tmpThienCan[6:]
+            return secondThienCan.extend(firstThienCan)
+        elif thienCanNam["chuCaiDau"] == "D" and thienCanNam["chuCaiDau"] == "N":
+            firstThienCan = tmpThienCan[0:7]
+            secondThienCan = tmpThienCan[8:]
+            return secondThienCan.extend(firstThienCan)
+        elif thienCanNam["chuCaiDau"] == "M" and thienCanNam["chuCaiDau"] == "Q":
+            return tmpThienCan
 
     def cungChu(self, thangSinhAmLich, gioSinhAmLich):
         self.cungThan = dichCung(3, thangSinhAmLich - 1, gioSinhAmLich - 1)

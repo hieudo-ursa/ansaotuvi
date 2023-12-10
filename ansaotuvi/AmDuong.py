@@ -111,8 +111,8 @@ thienCan = [
 diaChi = [
     {
         "id": 0,
-        "tenChi": "Hem có",
-        "tenHanh": ":D",
+        "tenChi": "Không có",
+        "tenHanh": "T",
         "amDuong": 0
     },
     {

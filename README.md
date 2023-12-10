@@ -6,4 +6,4 @@ Mã nguồn mở chương trình an sao Tử vi ansaotuvi
 [x] Deploy ansaotuvi và ansaotuvi-website lên pypi
 [x] Chạy thử dự án tích hợp ansaotuvi-website
 [x] Điều chỉnh vị trí miếu hãm và ngũ hành của sao
-[] Chuẩn hóa vị trí sao và logic an sao
+[-] Chuẩn hóa vị trí sao và logic an sao
