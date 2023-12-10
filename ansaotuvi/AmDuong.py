@@ -420,7 +420,7 @@ def nguHanhNapAm(diaChi, thienCan, xuatBanMenh=False):
                 return banMenh[nh]
             else:
                 return nh[0]
-    except:
+    except Exception:
         raise Exception(nguHanhNapAm.__doc__)
 
 
@@ -534,7 +534,7 @@ def timThienKhoi(canNam):
     khoiViet = [None, 2, 1, 12, 10, 8, 1, 8, 7, 6, 4]
     try:
         return khoiViet[canNam]
-    except:
+    except Exception:
         raise Exception("Không tìm được vị trí Khôi-Việt")
 
 
@@ -550,7 +550,7 @@ def timThienQuanThienPhuc(canNam):
     thienPhuc = [None, 10, 9, 1, 12, 4, 3, 7, 6, 7, 6]
     try:
         return thienQuan[canNam], thienPhuc[canNam]
-    except:
+    except Exception:
         raise Exception("Không tìm được Quan-Phúc")
 
 
@@ -620,5 +620,5 @@ def timLuuTru(canNam):
     maTranThienTru = [None, 6, 7, 1, 6, 7, 9, 3, 7, 10, 11]
     try:
         return maTranLuuHa[canNam], maTranThienTru[canNam]
-    except:
+    except Exception:
         raise Exception("Không tìm được Lưu - Trù")

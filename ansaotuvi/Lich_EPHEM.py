@@ -3,15 +3,21 @@
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
 
-import ephem
-from typing import Tuple
 from datetime import date
+from typing import Tuple
+
+import ephem
 
 LUNAR_contract = Tuple[date, bool]  # [date, thang_nhuan]
 
 
-def s2l(solarDate: ephem.Date, location: ephem.Observer, timezone: int) -> LUNAR_contract:
-    solarDate += timezone * ephem.hour  # so we are working in the correct timezone
+def s2l(
+    solarDate: ephem.Date,
+    location: ephem.Observer,
+    timezone: int,
+) -> LUNAR_contract:
+    # so we are working in the correct timezone
+    solarDate += timezone * ephem.hour
 
     lunar_leap = False
 
@@ -23,7 +29,8 @@ def s2l(solarDate: ephem.Date, location: ephem.Observer, timezone: int) -> LUNAR
     # Dong chi nam sau
     nextWinterSolstice = ephem.next_winter_solstice(solarDate)
 
-    dayInLunarYear = ephem.previous_new_moon(nextWinterSolstice) - ephem.previous_new_moon(previousWinterSolstice)
+    dayInLunarYear = ephem.previous_new_moon(nextWinterSolstice) \
+        - ephem.previous_new_moon(previousWinterSolstice)
 
     diff = int(dayInLunarYear / 29.)
 
@@ -32,7 +39,12 @@ def s2l(solarDate: ephem.Date, location: ephem.Observer, timezone: int) -> LUNAR
     lunarYear = solarDate.year
 
     if dayInLunarYear > 365:
-        lunar_leap = (lunarMonth == find_lunar_month_between(previousWinterSolstice, nextWinterSolstice))
+        lunar_leap = (
+            lunarMonth == find_lunar_month_between(
+                previousWinterSolstice,
+                nextWinterSolstice
+            )
+        )
 
     print(dayInLunarYear, previousWinterSolstice, nextWinterSolstice)
     return tuple(date(lunarYear, lunarMonth, lunarDay), lunar_leap)
@@ -50,7 +62,10 @@ def find_new_moon_between(startDate: ephem.Date, endDate: ephem.Date) -> int:
     return newMoon
 
 
-def find_solar_terms_between(startDate: ephem.Date, endDate: ephem.Date) -> list:
+def find_solar_terms_between(
+    startDate: ephem.Date,
+    endDate: ephem.Date
+) -> list:
     solar_terms = []
     for degree in range(0, 330, 30):
         term = when_is_sun_at_degrees_longitude(startDate, degree)
@@ -60,7 +75,8 @@ def find_solar_terms_between(startDate: ephem.Date, endDate: ephem.Date) -> list
 
 
 def when_is_sun_at_degrees_longitude(date: date, degrees: int) -> ephem.Date:
-    # Thanks to Brandon Rhode @ https://answers.launchpad.net/pyephem/+question/110832
+    # Thanks to Brandon Rhode
+    # @ https://answers.launchpad.net/pyephem/+question/110832
 
     # Find out the sun's current longitude.
 

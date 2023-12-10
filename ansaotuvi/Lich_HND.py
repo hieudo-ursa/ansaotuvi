@@ -134,7 +134,8 @@ def getSunLongitude(jdn, timeZone):
     M = 357.52910 + 35999.05030*T - 0.0001559*T2 - 0.00000048*T*T2
     L0 = 280.46645 + 36000.76983*T + 0.0003032*T2
     DL = (1.914600 - 0.004817*T - 0.000014*T2)*math.sin(dr*M)
-    DL = DL + (0.019993 - 0.000101*T)*math.sin(dr*2*M) + 0.000290*math.sin(dr*3*M)
+    DL = DL + (0.019993 - 0.000101*T)*math.sin(dr*2*M) \
+        + 0.000290*math.sin(dr*3*M)
     L = L0 + DL
     omega = 125.04 - 1934.136 * T
     L = L - 0.00569 - 0.00478 * math.sin(omega * dr)
@@ -151,8 +152,11 @@ def getNewMoonDay(k, timeZone):
 
 
 def getLunarMonth11(yy, timeZone):
-    '''def getLunarMonth11(yy, timeZone):  Find the day that starts the luner month
-    11of the given year for the given time zone.'''
+    '''
+        def getLunarMonth11(yy, timeZone):
+        Find the day that starts the luner month
+        11of the given year for the given time zone.
+    '''
     # off = jdFromDate(31, 12, yy) \
     #            - 2415021.076998695
     off = jdFromDate(31, 12, yy) - 2415021.
@@ -165,6 +169,8 @@ def getLunarMonth11(yy, timeZone):
     return nm
 
 # print getLunarMonth11(1992, 7)
+
+
 def getLeapMonthOffset(a11, timeZone):
     '''def getLeapMonthOffset(a11, timeZone): Find the index of the leap month
     after the month starting on the day a11.'''

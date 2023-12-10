@@ -2,9 +2,11 @@
 """
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
-from ansaotuvi.AmDuong import (canChiNgay, diaChi, ngayThangNam, ngayThangNamCanChi,
-                     nguHanh, nguHanhNapAm, thienCan, timCuc, sinhKhac)
 import time
+
+from ansaotuvi.AmDuong import (canChiNgay, diaChi, ngayThangNam,
+                               ngayThangNamCanChi, nguHanh, nguHanhNapAm,
+                               sinhKhac, thienCan, timCuc)
 from ansaotuvi.Lich_HND import jdFromDate
 
 
@@ -33,7 +35,7 @@ class lapThienBan(object):
                 ngayThangNam(self.ngayDuong, self.thangDuong, self.namDuong,
                              True, self.timeZone)
         else:
-            self.ngayAm, self.thangAm, self.namAm = self.ngayDuong,\
+            self.ngayAm, self.thangAm, self.namAm = self.ngayDuong, \
                 self.thangDuong, self.namDuong
 
         self.canThang, self.canNam, self.chiNam = \

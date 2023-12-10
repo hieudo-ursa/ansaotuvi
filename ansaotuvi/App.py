@@ -2,10 +2,10 @@
 """
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
-from ansaotuvi.AmDuong import (diaChi, dichCung, ngayThangNam,
-                               ngayThangNamCanChi, nguHanh, nguHanhNapAm,
-                               thienCan, timCoThan, timCuc, timHoaLinh,
-                               timLuuTru, timPhaToai, timThienKhoi, timThienMa,
+from ansaotuvi.AmDuong import (diaChi, dichCung, ngayThangNam,  # nguHanhNapAm,
+                               ngayThangNamCanChi, nguHanh, thienCan,
+                               timCoThan, timCuc, timHoaLinh, timLuuTru,
+                               timPhaToai, timThienKhoi, timThienMa,
                                timThienQuanThienPhuc, timTrangSinh, timTriet,
                                timTuVi)
 from ansaotuvi.Sao import (saoAnQuang, saoBachHo, saoBacSy, saoBatToa, saoBenh,
