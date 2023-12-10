@@ -65,13 +65,14 @@ class diaBan(object):
         super(diaBan, self).__init__()
         self.thangSinhAmLich = thangSinhAmLich
         self.gioSinhAmLich = gioSinhAmLich
-        listOfCanDiaBan = self.canDiaBan(thienCanNam).extend(thienCan[0])
+        listOfCanDiaBan = self.canDiaBan(thienCanNam)
+        listOfCanDiaBan = listOfCanDiaBan.extend(thienCan[0])
         self.thapNhiCung = [cungDiaBan(i, listOfCanDiaBan[i]) for i in range(13)]
         self.nhapCungChu()
         self.nhapCungThan()
     
     def canDiaBan(self, thienCanNam):
-        tmpThienCan = thienCan[1:]
+        tmpThienCan = [].extend(thienCan[1:])
         if thienCanNam["chuCaiDau"] == "G" and thienCanNam["chuCaiDau"] == "K":
             firstThienCan = tmpThienCan[0:1]
             secondThienCan = tmpThienCan[2:]
