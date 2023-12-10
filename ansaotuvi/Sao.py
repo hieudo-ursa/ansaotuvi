@@ -2,7 +2,7 @@
 """
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
-from lasotuvi.AmDuong import nguHanh
+from ansaotuvi.AmDuong import nguHanh
 
 
 class Sao(object):

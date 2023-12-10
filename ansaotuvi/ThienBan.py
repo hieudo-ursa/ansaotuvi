@@ -2,10 +2,10 @@
 """
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
-from lasotuvi.AmDuong import (canChiNgay, diaChi, ngayThangNam, ngayThangNamCanChi,
+from ansaotuvi.AmDuong import (canChiNgay, diaChi, ngayThangNam, ngayThangNamCanChi,
                      nguHanh, nguHanhNapAm, thienCan, timCuc, sinhKhac)
 import time
-from lasotuvi.Lich_HND import jdFromDate
+from ansaotuvi.Lich_HND import jdFromDate
 
 
 class lapThienBan(object):
