@@ -9,7 +9,7 @@ from ansaotuvi.AmDuong import diaChi, dichCung, khoangCachCung, thienCan
 class cungDiaBan(object):
     """docstring for cungDiaBan"""
 
-    def __init__(self, cungID, canDiaBan):
+    def __init__(self, cungID, canDiaBan = None):
         # super(cungDiaBan, self).__init__()
         hanhCung = [
             None,
@@ -30,8 +30,14 @@ class cungDiaBan(object):
         self.hanhCung = hanhCung[cungID]
         self.cungSao = []
         self.cungAmDuong = -1 if (self.cungSo % 2 == 0) else 1
-        self.cungTen = canDiaBan["chuCaiDau"] + ". " + diaChi[self.cungSo]["tenChi"]
+        self.cungTen = "{} {}".format(self.getCanDiaBan(canDiaBan, "tenCan"), diaChi[self.cungSo]["tenChi"])
         self.cungThan = False
+
+    def getCanDiaBan(self, canDiaBan, canKey):
+        if canDiaBan is not None and canKey in canDiaBan:
+            return canDiaBan[canKey]
+        else:
+            return ""
 
     def themSao(self, sao):
         dacTinhSao(self.cungSo, sao)
@@ -66,31 +72,44 @@ class diaBan(object):
         self.thangSinhAmLich = thangSinhAmLich
         self.gioSinhAmLich = gioSinhAmLich
         listOfCanDiaBan = self.canDiaBan(thienCanNam)
-        listOfCanDiaBan = listOfCanDiaBan.extend(thienCan[0])
-        self.thapNhiCung = [cungDiaBan(i, listOfCanDiaBan[i]) for i in range(13)]
+        if listOfCanDiaBan is not None and len(listOfCanDiaBan) > 0:
+            self.thapNhiCung = [cungDiaBan(i, self.safeGetIndexOfList(listOfCanDiaBan, i)) for i in range(13)]
+        else:
+            self.thapNhiCung = [cungDiaBan(i) for i in range(13)]
         self.nhapCungChu()
         self.nhapCungThan()
+        
+    def safeGetIndexOfList(self, list, index):
+        if list is not None and index < len(list):
+            return list[index]
+        else:
+            return None  # hoặc giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
     
     def canDiaBan(self, thienCanNam):
-        tmpThienCan = [].extend(thienCan[1:])
-        if thienCanNam["chuCaiDau"] == "G" and thienCanNam["chuCaiDau"] == "K":
+        tmpThienCan = thienCan[1:]
+        if thienCanNam["chuCaiDau"] == "G" or thienCanNam["chuCaiDau"] == "K":
             firstThienCan = tmpThienCan[0:1]
             secondThienCan = tmpThienCan[2:]
-            return secondThienCan.extend(firstThienCan)
-        elif thienCanNam["chuCaiDau"] == "A" and thienCanNam["chuCaiDau"] == "C":
-            firstThienCan = tmpThienCan[0:3]
+            lastThienCan = tmpThienCan[2:4]
+            return [thienCan[0]] + lastThienCan + secondThienCan + firstThienCan
+        elif thienCanNam["chuCaiDau"] == "A" or thienCanNam["chuCaiDau"] == "C":
+            firstThienCan = tmpThienCan[0:4]
             secondThienCan = tmpThienCan[4:]
-            return secondThienCan.extend(firstThienCan)
-        elif thienCanNam["chuCaiDau"] == "B" and thienCanNam["chuCaiDau"] == "T":
-            firstThienCan = tmpThienCan[0:5]
+            lastThienCan = tmpThienCan[4:6]
+            return [thienCan[0]] + lastThienCan + secondThienCan + firstThienCan
+        elif thienCanNam["chuCaiDau"] == "B" or thienCanNam["chuCaiDau"] == "T":
+            firstThienCan = tmpThienCan[0:6]
             secondThienCan = tmpThienCan[6:]
-            return secondThienCan.extend(firstThienCan)
-        elif thienCanNam["chuCaiDau"] == "D" and thienCanNam["chuCaiDau"] == "N":
-            firstThienCan = tmpThienCan[0:7]
+            lastThienCan = tmpThienCan[6:8]
+            return [thienCan[0]] + lastThienCan + secondThienCan + firstThienCan
+        elif thienCanNam["chuCaiDau"] == "D" or thienCanNam["chuCaiDau"] == "N":
+            firstThienCan = tmpThienCan[0:8]
             secondThienCan = tmpThienCan[8:]
-            return secondThienCan.extend(firstThienCan)
-        elif thienCanNam["chuCaiDau"] == "M" and thienCanNam["chuCaiDau"] == "Q":
-            return tmpThienCan
+            lastThienCan = tmpThienCan[8:10]
+            return [thienCan[0]] + lastThienCan + secondThienCan + firstThienCan
+        elif thienCanNam["chuCaiDau"] == "M" or thienCanNam["chuCaiDau"] == "Q":
+            lastThienCan = tmpThienCan[0:2]
+            return [thienCan[0]] + lastThienCan + tmpThienCan
 
     def cungChu(self, thangSinhAmLich, gioSinhAmLich):
         self.cungThan = dichCung(3, thangSinhAmLich - 1, gioSinhAmLich - 1)

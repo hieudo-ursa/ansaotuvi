@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='ansaotuvi',
-      version='0.1.6',
+      version='0.1.21',
       description='Chương trình an sao tử vi mã nguồn mở',
       url='https://github.com/hieudo-ursa/ansaotuvi',
       author='hieu.do',
