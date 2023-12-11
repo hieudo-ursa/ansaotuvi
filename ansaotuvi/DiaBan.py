@@ -31,7 +31,7 @@ class cungDiaBan(object):
         self.cungSao = []
         self.cungAmDuong = -1 if (self.cungSo % 2 == 0) else 1
         self.cungTen = "{} {}".format(self.getCanDiaBan(canDiaBan, "tenCan"), diaChi[self.cungSo]["tenChi"])
-        self.cungDiaChi = diaChi[self.cungSo]["tenChi"]
+        self.cungDiaChi = diaChi[self.cungSo]["tenVietTat"]
         self.cungThan = False
 
     def getCanDiaBan(self, canDiaBan, canKey):

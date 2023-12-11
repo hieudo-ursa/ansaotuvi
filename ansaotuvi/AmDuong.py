@@ -112,6 +112,7 @@ diaChi = [
     {
         "id": 0,
         "tenChi": "Không có",
+        "tenVietTat": "khongco",
         "tenHanh": "T",
         "amDuong": 0
     },
@@ -119,6 +120,7 @@ diaChi = [
         "id": 1,
         "tenChi": "Tý",
         "tenHanh": "T",
+        "tenVietTat": "ty1",
         "menhChu": "Tham lang",
         "thanChu": "Linh tinh",
         "amDuong": 1
@@ -127,6 +129,7 @@ diaChi = [
         "id": 2,
         "tenChi": "Sửu",
         "tenHanh": "O",
+        "tenVietTat": "suu",
         "menhChu": "Cự môn",
         "thanChu": "Thiên tướng",
         "amDuong": -1
@@ -135,6 +138,7 @@ diaChi = [
         "id": 3,
         "tenChi": "Dần",
         "tenHanh": "M",
+        "tenVietTat": "dan",
         "menhChu": "Lộc tồn",
         "thanChu": "Thiên lương",
         "amDuong": 1
@@ -143,6 +147,7 @@ diaChi = [
         "id": 4,
         "tenChi": "Mão",
         "tenHanh": "M",
+        "tenVietTat": "mao",
         "menhChu": "Văn khúc",
         "thanChu": "Thiên đồng",
         "amDuong": -1
@@ -151,6 +156,7 @@ diaChi = [
         "id": 5,
         "tenChi": "Thìn",
         "tenHanh": "O",
+        "tenVietTat": "thin",
         "menhChu": "Liêm trinh",
         "thanChu": "Văn xương",
         "amDuong": 1
@@ -159,6 +165,7 @@ diaChi = [
         "id": 6,
         "tenChi": "Tỵ",
         "tenHanh": "H",
+        "tenVietTat": "ty2",
         "menhChu": "Vũ khúc",
         "thanChu": "Thiên cơ",
         "amDuong": -1
@@ -167,6 +174,7 @@ diaChi = [
         "id": 7,
         "tenChi": "Ngọ",
         "tenHanh": "H",
+        "tenVietTat": "ngo",
         "menhChu": "Phá quân",
         "thanChu": "Hỏa tinh",
         "amDuong": 1
@@ -175,6 +183,7 @@ diaChi = [
         "id": 8,
         "tenChi": "Mùi",
         "tenHanh": "O",
+        "tenVietTat": "mui",
         "menhChu": "Vũ khúc",
         "thanChu": "Thiên tướng",
         "amDuong": -1
@@ -183,6 +192,7 @@ diaChi = [
         "id": 9,
         "tenChi": "Thân",
         "tenHanh": "K",
+        "tenVietTat": "than",
         "menhChu": "Liêm trinh",
         "thanChu": "Thiên lương",
         "amDuong": 1
@@ -191,6 +201,7 @@ diaChi = [
         "id": 10,
         "tenChi": "Dậu",
         "tenHanh": "K",
+        "tenVietTat": "dau",
         "menhChu": "Văn khúc",
         "thanChu": "Thiên đồng",
         "amDuong": -1
@@ -199,6 +210,7 @@ diaChi = [
         "id": 11,
         "tenChi": "Tuất",
         "tenHanh": "O",
+        "tenVietTat": "tuat",
         "menhChu": "Lộc tồn",
         "thanChu": "Văn xương",
         "amDuong": 1
@@ -207,6 +219,7 @@ diaChi = [
         "id": 12,
         "tenChi": "Hợi",
         "tenHanh": "T",
+        "tenVietTat": "hoi",
         "menhChu": "Cự môn",
         "thanChu": "Thiên cơ",
         "amDuong": -1
