@@ -471,8 +471,8 @@ def lapDiaBan(diaBan, nn, tt, nnnn, gioSinh, gioiTinh, duongLich, timeZone):
     ketThucTuan = dichCung(chiNam, 10 - canNam)
     viTriTuan1 = dichCung(ketThucTuan, 1)
     viTriTuan2 = dichCung(viTriTuan1, 1)
-    diaBan.nhapTuan(viTriTuan1, viTriTuan2)
+    diaBan.nhapTuan(viTriTuan1)
 
     viTriTriet1, viTriTriet2 = timTriet(canNam)
-    diaBan.nhapTriet(viTriTriet1, viTriTriet2)
+    diaBan.nhapTriet(viTriTriet1)
     return (diaBan)
