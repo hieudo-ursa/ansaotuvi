@@ -90,7 +90,7 @@ class diaBan(object):
     def canDiaBan(self, thienCanNam):
         tmpThienCan = thienCan[1:]
         if thienCanNam["chuCaiDau"] == "G" or thienCanNam["chuCaiDau"] == "K":
-            firstThienCan = tmpThienCan[0:1]
+            firstThienCan = tmpThienCan[0:2]
             secondThienCan = tmpThienCan[2:]
             lastThienCan = tmpThienCan[2:4]
             return [thienCan[0]] + lastThienCan + secondThienCan + firstThienCan
