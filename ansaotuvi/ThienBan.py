@@ -54,8 +54,9 @@ class lapThienBan(object):
         self.chiNgayTen = diaChi[self.chiNgay]['tenChi']
 
         cungAmDuong = 1 if (diaBan.cungMenh % 2 == 1) else -1
+        namSinhAmDuong = 1 if (self.chiNam % 2 == 1) else -1
         self.amDuongNamSinh = "Dương" if (self.chiNam % 2 == 1) else "Âm"
-        if (cungAmDuong * self.gioiTinh == 1):
+        if (cungAmDuong * namSinhAmDuong == 1):
             self.amDuongMenh = "Âm dương thuận lý"
         else:
             self.amDuongMenh = "Âm dương nghịch lý"
@@ -71,14 +72,14 @@ class lapThienBan(object):
         menhId = nguHanh(self.menh)['id']
         menhCuc = sinhKhac(menhId, self.hanhCuc)
         if menhCuc == 1:
-            self.sinhKhac = "Bản Mệnh sinh Cục"
+            self.sinhKhac = "Mệnh sinh Cục"
         elif menhCuc == -1:
-            self.sinhKhac = "Bản Mệnh khắc Cục"
+            self.sinhKhac = "Mệnh khắc Cục"
         elif menhCuc == -1j:
-            self.sinhKhac = "Cục khắc Bản Mệnh"
+            self.sinhKhac = "Cục khắc Mệnh"
         elif menhCuc == 1j:
-            self.sinhKhac = "Cục sinh Bản mệnh"
+            self.sinhKhac = "Cục sinh Mệnh"
         else:
-            self.sinhKhac = "Cục hòa Bản Mệnh"
+            self.sinhKhac = "Mệnh Cục bình hòa"
 
         self.banMenh = nguHanhNapAm(self.chiNam, self.canNam, True)
